@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { getProblemLabel } from "@/lib/lead-form";
+import { buildLeadEmailHtml, buildLeadEmailText } from "@/lib/lead-email";
 
 type LeadPayload = {
   name?: string;
@@ -42,19 +43,22 @@ export async function POST(request: Request) {
   const sourceLabel = body.source === "audit" ? "Free Audit Request" : "Contact Form";
   const isEmail = EMAIL_PATTERN.test(body.contact ?? "");
 
+  const emailData = {
+    sourceLabel,
+    name: body.name,
+    business: body.business,
+    website: body.website,
+    contact: body.contact,
+    problemLabel: getProblemLabel(body.problem),
+  };
+
   const { error } = await resend.emails.send({
     from: FROM_ADDRESS,
     to: notificationEmail,
     ...(isEmail ? { replyTo: body.contact } : {}),
     subject: `${sourceLabel}: ${body.business}`,
-    text: [
-      `Source: ${sourceLabel}`,
-      `Name: ${body.name}`,
-      `Business: ${body.business}`,
-      `Website: ${body.website || "(not provided)"}`,
-      `Email or phone: ${body.contact}`,
-      `Biggest problem: ${getProblemLabel(body.problem)}`,
-    ].join("\n"),
+    html: buildLeadEmailHtml(emailData),
+    text: buildLeadEmailText(emailData),
   });
 
   if (error) {

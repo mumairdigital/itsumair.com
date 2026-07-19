@@ -6,6 +6,7 @@ import { Container } from "@/components/layout/Container";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Card } from "@/components/ui/Card";
 import { ImagePlaceholder } from "@/components/media/ImagePlaceholder";
+import { ResponsiveImage } from "@/components/media/ResponsiveImage";
 import { CtaBlock } from "@/components/content/CtaBlock";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildBreadcrumbSchema } from "@/lib/schema";
@@ -46,7 +47,11 @@ export default function ResultsPage() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {CASE_STUDIES.map((study) => (
             <Card key={study.slug} hoverable as={Link} href={`/results/${study.slug}/`} className="flex flex-col">
-              <ImagePlaceholder label={`Illustrative graphic for the case study: ${study.title}`} aspect="aspect-video" />
+              {study.images?.[0] ? (
+                <ResponsiveImage src={study.images[0].src} alt={study.images[0].alt} aspect="aspect-video" />
+              ) : (
+                <ImagePlaceholder label={`Illustrative graphic for the case study: ${study.title}`} aspect="aspect-video" />
+              )}
               <p className="text-small mt-5 font-semibold uppercase tracking-wide text-proof-accent">{study.tag}</p>
               <h2 className="text-h4 mt-2">{study.title}</h2>
               <p className="text-body mt-2 flex-1 text-text-secondary">{study.hubExcerpt}</p>
