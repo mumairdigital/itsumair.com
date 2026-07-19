@@ -92,7 +92,7 @@ export function LeadForm({ source }: LeadFormProps) {
 
       {status === "error" && (
         <p role="alert" className="text-small text-error">
-          Something went wrong. Email me directly at {CONTACT_EMAIL} and I&apos;ll sort it out.
+          {`Something went wrong. Email me directly at ${CONTACT_EMAIL} and I'll sort it out.`}
         </p>
       )}
 
