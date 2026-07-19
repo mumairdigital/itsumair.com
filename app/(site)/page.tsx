@@ -4,8 +4,8 @@ import { MapPinOff, Repeat, TrendingDown, MapPin, Star, LayoutTemplate, ShieldCh
 import { Section } from "@/components/layout/Section";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
-import { ImagePlaceholder } from "@/components/media/ImagePlaceholder";
 import { ResponsiveImage } from "@/components/media/ResponsiveImage";
+import { SvgGraphic } from "@/components/media/SvgGraphic";
 import { ProblemCard } from "@/components/content/ProblemCard";
 import { ProcessStep } from "@/components/content/ProcessStep";
 import { ServiceCard } from "@/components/content/ServiceCard";
@@ -209,7 +209,11 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <ImagePlaceholder label="Graphic representing tile and bathroom showroom product expertise" aspect="aspect-[4/3]" />
+          <SvgGraphic
+            src="/images/homepage/showroom-expertise.svg"
+            alt="Graphic of a tile swatch grid next to a calculator, representing tile and bathroom showroom product expertise"
+            aspect="aspect-[4/3]"
+          />
         </div>
       </Section>
 

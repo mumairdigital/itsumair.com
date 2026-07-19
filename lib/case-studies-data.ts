@@ -178,6 +178,12 @@ export const CASE_STUDIES: CaseStudy[] = [
       "The spam pages it had generated dropped out of Google's index over the following weeks as reindexing was requested and processed, and the site's real pages returned to their prior search visibility.",
       "This was general technical remediation work, not a bathroom-remodeler SEO campaign, so no Map Pack ranking numbers apply here. The result that matters is the one stated plainly: a compromised site, fully cleaned, with its real search presence recovered.",
     ],
+    images: [
+      {
+        src: "/images/case-studies/wordpress-rebuild-malware-recovery.webp",
+        alt: "Illustrative graphic of a database with a malicious bug flagged and removed, and a verified-clean checkmark — no real screenshot exists for this anonymized case",
+      },
+    ],
     servicesUsed: [
       { name: "Website Maintenance", href: "/services/website-maintenance/" },
       { name: "Website Design", href: "/services/website-design/" },
