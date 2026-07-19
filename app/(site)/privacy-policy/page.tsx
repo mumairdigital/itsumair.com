@@ -8,7 +8,7 @@ import { buildBreadcrumbSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 import { CONTACT_EMAIL } from "@/lib/nav";
 
-const LAST_UPDATED = "July 18, 2026";
+const LAST_UPDATED = "July 19, 2026";
 
 export const metadata: Metadata = pageMetadata({
   title: "Privacy Policy | Umair",
@@ -52,10 +52,7 @@ export default function PrivacyPolicyPage() {
               <li>Your email address and/or phone number</li>
               <li>The details you write about your problem or question</li>
               <li>If you book a call, the name, email, and time zone details needed to schedule it</li>
-              <li>
-                If you accept the cookie banner, anonymized analytics data (pages viewed, general location, device
-                type) via Google Analytics
-              </li>
+              <li>Anonymized analytics data (pages viewed, general location, device type) via Google Analytics</li>
             </ul>
           </div>
 
@@ -77,10 +74,10 @@ export default function PrivacyPolicyPage() {
 
           <div>
             <h2 className="text-h2 text-text-primary">Who It&apos;s Shared With</h2>
-            <p className="mt-3">Form, booking, and (if accepted) analytics data passes through named third-party tools that process it on my behalf:</p>
+            <p className="mt-3">Form, booking, and analytics data passes through named third-party tools that process it on my behalf:</p>
             <ul className="mt-3 flex flex-col gap-2">
               <li>
-                <strong className="text-text-primary">Formspree</strong>, which delivers audit and contact form
+                <strong className="text-text-primary">Resend</strong>, which delivers audit and contact form
                 submissions to my inbox
               </li>
               <li>
@@ -88,8 +85,7 @@ export default function PrivacyPolicyPage() {
                 time
               </li>
               <li>
-                <strong className="text-text-primary">Google Analytics</strong>, which measures site traffic, only if
-                you accept the cookie banner. See{" "}
+                <strong className="text-text-primary">Google Analytics</strong>, which measures site traffic. See{" "}
                 <a
                   href="https://policies.google.com/privacy"
                   target="_blank"
@@ -136,11 +132,19 @@ export default function PrivacyPolicyPage() {
           <div>
             <h2 className="text-h2 text-text-primary">Cookies</h2>
             <p className="mt-3">
-              This site does not use advertising cookies. It does use Google Analytics to understand traffic (which
-              pages get visited, roughly where from, on what kind of device), but only after you accept the cookie
-              banner shown on your first visit. Google Analytics sets no cookies at all if you decline or don&apos;t
-              respond, and nothing loads until you actively accept. You can change your mind at any time by clearing
-              your browser&apos;s local storage for this site, which will show the banner again.
+              This site does not use advertising cookies. It does use Google Analytics to understand traffic, which
+              pages get visited, roughly where from, on what kind of device, aggregated across all visitors rather
+              than tied to who you are. If you&apos;d rather not be tracked, most browsers let you block analytics
+              scripts directly, or you can install{" "}
+              <a
+                href="https://tools.google.com/dlpage/gaoptout"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-brand-primary hover:underline"
+              >
+                Google&apos;s opt-out browser add-on
+              </a>
+              .
             </p>
           </div>
 

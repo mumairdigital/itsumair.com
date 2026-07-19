@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { SkipLink } from "@/components/layout/SkipLink";
-import { CookieConsent } from "@/components/analytics/CookieConsent";
+import { Analytics } from "@/components/analytics/Analytics";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildSiteEntitiesSchema, SITE_URL } from "@/lib/schema";
 import { DEFAULT_OG_IMAGE } from "@/lib/seo";
@@ -58,7 +58,7 @@ export default function RootLayout({
       <body className="flex min-h-full flex-col">
         <JsonLd data={siteEntitiesSchema} />
         <SkipLink />
-        <CookieConsent />
+        <Analytics />
         {children}
       </body>
     </html>
