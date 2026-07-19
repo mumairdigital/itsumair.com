@@ -1,0 +1,12 @@
+<svg width="360" height="90" viewBox="0 0 360 90" xmlns="http://www.w3.org/2000/svg">
+  <!-- mark -->
+  <rect x="6" y="9" width="72" height="72" rx="16" fill="#FFFFFF"/>
+  <path d="M31 32 V54 C31 62 37 68 44 68 C51 68 57 62 57 54 V32"
+        stroke="#6700C8" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <circle cx="44" cy="24" r="3.2" fill="#6700C8"/>
+  <!-- wordmark -->
+  <text x="96" y="46" font-family="Arial, Helvetica, sans-serif" font-weight="700"
+        font-size="30" fill="#FFFFFF" letter-spacing="0.5">its<tspan fill="#D9B8FF">umair</tspan></text>
+  <text x="96" y="68" font-family="Arial, Helvetica, sans-serif" font-weight="400"
+        font-size="13" fill="#E4D4FF" letter-spacing="2.5">LOCAL SEO &amp; WEB</text>
+</svg>
