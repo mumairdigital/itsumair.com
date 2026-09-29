@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+/* ===== tokens/colors.css ===== */
+/* ---------- Base palette ---------- */
+:root{
+  /* Violet — brand. 600 is the signature #6700C8 */
+  --violet-50:#F6F0FD;--violet-100:#ECDFFB;--violet-200:#D8BEF6;--violet-300:#BC8FEF;--violet-400:#9A55E3;--violet-500:#7D1ED8;--violet-600:#6700C8;--violet-700:#5400A5;--violet-800:#420082;--violet-900:#300060;--violet-950:#1D003B;
+  /* Ink — violet-tinted warm neutrals (never pure grey/black) */
+  --ink-0:#FFFFFF;--ink-25:#FBF9F6;--ink-50:#F5F2EE;--ink-100:#EBE7E2;--ink-200:#DAD4CE;--ink-300:#BDB5AE;--ink-400:#948B86;--ink-500:#6E6570;--ink-600:#524A56;--ink-700:#3A3340;--ink-800:#26202C;--ink-900:#18131D;--ink-950:#0F0B13;
+  /* Apricot — warm human counterweight. Highlights only, never large fills */
+  --apricot-100:#FFE9D9;--apricot-300:#FFBE8F;--apricot-500:#FF8B4A;--apricot-700:#C2530F;
+  /* Semantic bases */
+  --green-100:#DDF3E6;--green-500:#1E9E5A;--green-700:#12693B;
+  --amber-100:#FCF0CF;--amber-500:#D99A06;--amber-700:#8A5F00;
+  --red-100:#FBE1DF;--red-500:#D93A2B;--red-700:#99231A;
+  --blue-100:#DDEBFC;--blue-500:#2A6FDB;--blue-700:#1B4D9E;
+}
+/* ---------- Semantic aliases — light (default) ---------- */
+:root{
+  --brand:var(--violet-600);--brand-hover:var(--violet-700);--brand-press:var(--violet-800);--brand-subtle:var(--violet-50);--brand-muted:var(--violet-100);--on-brand:#FFFFFF;
+  --accent:var(--apricot-500);--accent-subtle:var(--apricot-100);--on-accent:var(--ink-900);
+  --bg-page:var(--ink-25);--bg-sunken:var(--ink-50);--bg-inverse:var(--ink-900);--bg-brand:var(--violet-600);
+  --surface-card:var(--ink-0);--surface-raised:var(--ink-0);--surface-muted:var(--ink-50);--surface-hover:var(--ink-50);--surface-overlay:rgba(15,11,19,.55);
+  --text-strong:var(--ink-900);--text-body:var(--ink-700);--text-muted:var(--ink-500);--text-faint:var(--ink-400);--text-inverse:var(--ink-25);--text-brand:var(--violet-600);--text-link:var(--violet-600);--text-link-hover:var(--violet-800);
+  --border-subtle:var(--ink-100);--border-default:var(--ink-200);--border-strong:var(--ink-400);--border-brand:var(--violet-600);
+  --focus-ring:var(--violet-500);
+  --success:var(--green-500);--success-subtle:var(--green-100);--success-text:var(--green-700);
+  --warning:var(--amber-500);--warning-subtle:var(--amber-100);--warning-text:var(--amber-700);
+  --danger:var(--red-500);--danger-subtle:var(--red-100);--danger-text:var(--red-700);
+  --info:var(--blue-500);--info-subtle:var(--blue-100);--info-text:var(--blue-700);
+  color-scheme:light;
+}
+/* ---------- Dark theme — apply data-theme="dark" on any container ---------- */
+[data-theme="dark"]{
+  --brand:var(--violet-300);--brand-hover:var(--violet-200);--brand-press:var(--violet-100);--brand-subtle:#2A1440;--brand-muted:#3A1D58;--on-brand:var(--ink-950);
+  --accent:var(--apricot-300);--accent-subtle:#3A2418;--on-accent:var(--ink-950);
+  --bg-page:var(--ink-950);--bg-sunken:#0A070D;--bg-inverse:var(--ink-25);--bg-brand:var(--violet-700);
+  --surface-card:var(--ink-900);--surface-raised:var(--ink-800);--surface-muted:var(--ink-800);--surface-hover:var(--ink-800);--surface-overlay:rgba(0,0,0,.7);
+  --text-strong:var(--ink-25);--text-body:var(--ink-200);--text-muted:var(--ink-400);--text-faint:var(--ink-500);--text-inverse:var(--ink-900);--text-brand:var(--violet-300);--text-link:var(--violet-300);--text-link-hover:var(--violet-200);
+  --border-subtle:var(--ink-800);--border-default:var(--ink-700);--border-strong:var(--ink-500);--border-brand:var(--violet-300);
+  --focus-ring:var(--violet-300);
+  --success:#4CC784;--success-subtle:#13301F;--success-text:#7BDDA6;
+  --warning:#F0B93A;--warning-subtle:#33280C;--warning-text:#F5CD6E;
+  --danger:#F06A5C;--danger-subtle:#3A1512;--danger-text:#F59A90;
+  --info:#6FA4F2;--info-subtle:#12233D;--info-text:#9DC0F6;
+  color-scheme:dark;
+}
+
+/* ===== tokens/typography.css ===== */
+:root{
+  --weight-regular:400; /* @kind font */
+  --weight-medium:500; /* @kind font */
+  --weight-semibold:600; /* @kind font */
+  --weight-bold:700; /* @kind font */
+  --weight-black:800; /* @kind font */
+  
+  /* Type scale — 1.25 (major third) from 16px, display steps widened */
+  --text-xs:12px;--text-sm:14px;--text-md:16px;--text-lg:18px;--text-xl:20px;--text-2xl:24px;--text-3xl:30px;--text-4xl:38px;--text-5xl:48px;--text-6xl:64px;--text-7xl:84px;--text-8xl:112px;
+  --leading-tight:1.02; /* @kind font */
+  --leading-snug:1.15; /* @kind font */
+  --leading-normal:1.5; /* @kind font */
+  --leading-relaxed:1.65; /* @kind font */
+  
+  --tracking-tighter:-0.035em; /* @kind font */
+  --tracking-tight:-0.02em; /* @kind font */
+  --tracking-normal:0; /* @kind font */
+  --tracking-wide:0.06em; /* @kind font */
+  --tracking-caps:0.12em; /* @kind font */
+  
+  /* Semantic roles (fluid) */
+  --type-display:clamp(48px,7.2vw,112px);
+  --type-h1:clamp(38px,5vw,64px);
+  --type-h2:clamp(30px,3.6vw,48px);
+  --type-h3:clamp(24px,2.4vw,30px);
+  --type-h4:20px;
+  --type-lead:clamp(18px,1.6vw,20px);
+  --type-body:16px;
+  --type-small:14px;
+  --type-caption:12px;
+  --type-eyebrow:12px;
+}
+
+/* ===== tokens/spacing.css ===== */
+:root{
+  /* 4px base, 8px rhythm */
+  --space-0:0;--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:20px;--space-6:24px;--space-8:32px;--space-10:40px;--space-12:48px;--space-16:64px;--space-20:80px;--space-24:96px;--space-32:128px;--space-40:160px;
+  /* Section rhythm (fluid) */
+  --section-y:clamp(64px,10vw,144px); /* @kind spacing */
+  --section-y-tight:clamp(48px,6vw,88px); /* @kind spacing */
+
+  /* Layout */
+  --container-sm:680px;--container-md:960px;--container-lg:1200px;--container-xl:1360px;
+  --gutter:clamp(20px,4vw,48px); /* @kind spacing */
+  --grid-gap:clamp(16px,2vw,24px); /* @kind spacing */
+  --grid-columns:12; /* @kind other */
+
+  --measure:66ch; /* @kind spacing */
+  /* Breakpoints (reference — use in media queries) */
+  --bp-sm:640px; /* @kind other */
+  --bp-md:768px; /* @kind other */
+  --bp-lg:1024px; /* @kind other */
+  --bp-xl:1280px; /* @kind other */
+  /* Control heights */
+  --control-sm:32px;--control-md:40px;--control-lg:52px;
+}
+
+/* ===== tokens/effects.css ===== */
+:root{
+  --radius-none:0;--radius-xs:4px;--radius-sm:6px;--radius-md:10px;--radius-lg:16px;--radius-xl:24px;--radius-2xl:32px;--radius-full:999px;
+  --radius-control:var(--radius-md);--radius-card:var(--radius-lg);--radius-media:var(--radius-xl);
+  --border-width:1px; /* @kind spacing */
+  --border-width-strong:1.5px; /* @kind spacing */
+
+  /* Shadows — soft, violet-black tinted, low spread */
+  --shadow-xs:0 1px 2px rgba(24,19,29,.06);
+  --shadow-sm:0 1px 2px rgba(24,19,29,.06),0 2px 6px rgba(24,19,29,.05);
+  --shadow-md:0 2px 4px rgba(24,19,29,.05),0 8px 20px -4px rgba(24,19,29,.10);
+  --shadow-lg:0 4px 8px rgba(24,19,29,.05),0 24px 48px -12px rgba(24,19,29,.18);
+  --shadow-brand:0 10px 30px -10px rgba(103,0,200,.55);
+  --focus-shadow:0 0 0 2px var(--bg-page),0 0 0 4px var(--focus-ring);
+  /* Motion */
+  --ease-out:cubic-bezier(.22,1,.36,1); /* @kind other */
+  --ease-in-out:cubic-bezier(.65,0,.35,1); /* @kind other */
+  --ease-standard:cubic-bezier(.2,0,0,1); /* @kind other */
+  
+  --dur-fast:120ms; /* @kind other */
+  --dur-base:200ms; /* @kind other */
+  --dur-slow:360ms; /* @kind other */
+  --dur-slower:600ms; /* @kind other */
+  
+  --reveal-distance:16px; /* @kind spacing */
+  --stagger:80ms; /* @kind other */
+  --dur-reveal:600ms; /* @kind other */
+  --dur-count:1400ms; /* @kind other */
+  --marquee-speed:45s; /* @kind other */
+  --z-base:0; /* @kind other */
+  --z-sticky:100; /* @kind other */
+  --z-overlay:400; /* @kind other */
+  --z-modal:500; /* @kind other */
+  --z-toast:600; /* @kind other */
+  --z-tooltip:700; /* @kind other */
+  
+}
+
+/* ===== tokens/base.css ===== */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg-page);color:var(--text-body);font-family:var(--font-body);font-size:var(--type-body);line-height:var(--leading-normal);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,h4,h5,h6{font-family:var(--font-display);color:var(--text-strong);margin:0;letter-spacing:var(--tracking-tight);line-height:var(--leading-snug);font-weight:var(--weight-bold);text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+a{color:var(--text-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;transition:color var(--dur-fast) var(--ease-standard)}
+a:hover{color:var(--text-link-hover)}
+::selection{background:var(--violet-200);color:var(--ink-950)}
+:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px}
+img{max-width:100%;display:block}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+/* Utility type roles */
+.mu-display{font-family:var(--font-display);font-size:var(--type-display);font-weight:var(--weight-black);line-height:.96;letter-spacing:var(--tracking-tighter);color:var(--text-strong)}
+.mu-h1{font-family:var(--font-display);font-size:var(--type-h1);font-weight:var(--weight-bold);line-height:1.04;letter-spacing:var(--tracking-tighter);color:var(--text-strong)}
+.mu-h2{font-family:var(--font-display);font-size:var(--type-h2);font-weight:var(--weight-bold);line-height:1.08;letter-spacing:var(--tracking-tight);color:var(--text-strong)}
+.mu-h3{font-family:var(--font-display);font-size:var(--type-h3);font-weight:var(--weight-semibold);line-height:1.2;letter-spacing:var(--tracking-tight);color:var(--text-strong)}
+.mu-lead{font-size:var(--type-lead);line-height:var(--leading-relaxed);color:var(--text-body)}
+.mu-eyebrow{font-family:var(--font-mono);font-size:var(--type-eyebrow);font-weight:500;letter-spacing:var(--tracking-caps);text-transform:uppercase;color:var(--text-brand)}
+.mu-container{width:100%;max-width:var(--container-lg);margin:0 auto;padding:0 var(--gutter)}
+
+
+/* ===== site layout helpers ===== */
+.mu-nav-links{display:none}
+.mu-nav-toggle{display:inline-flex}
+@media (min-width:860px){.mu-nav-links{display:flex}.mu-nav-toggle{display:none}}
+.mu-hero-split{grid-template-columns:minmax(0,1fr)}
+@media (min-width:960px){.mu-hero-split{grid-template-columns:minmax(0,6fr) minmax(0,6fr)}}
+.mu-grid-3{display:grid;gap:var(--grid-gap);grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.mu-section{padding:var(--section-y-tight) 0}
+.mu-skip{position:absolute;left:-9999px}
+.mu-skip:focus{left:16px;top:16px;z-index:999;background:var(--brand);color:var(--on-brand);padding:8px 12px;border-radius:var(--radius-sm)}
+
+/* WhatsApp shortcut */
+.mu-wa{position:fixed;right:20px;bottom:20px;z-index:var(--z-sticky);display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 16px;border-radius:var(--radius-full);background:var(--success);color:#fff;font-weight:600;font-size:14px;text-decoration:none;box-shadow:var(--shadow-lg);transition:transform var(--dur-base) var(--ease-out)}
+.mu-wa:hover{color:#fff;transform:translateY(-2px)}
+.mu-wa-label{display:none}
+@media (min-width:640px){.mu-wa-label{display:inline}}
