@@ -23,12 +23,12 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image" },
 };
 
-/** Sets data-theme before paint: saved choice first, then the OS preference. */
-const themeScript = `try{var t=localStorage.getItem('mu-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t)}catch(e){}`;
+/** Sets data-theme before paint: the visitor's saved choice, otherwise dark by default. */
+const themeScript = `try{var t=localStorage.getItem('mu-theme')||'dark';document.documentElement.setAttribute('data-theme',t)}catch(e){}`;
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`} suppressHydrationWarning>
+    <html lang="en" data-theme="dark" className={`${display.variable} ${body.variable} ${mono.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
