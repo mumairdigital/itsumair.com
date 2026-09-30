@@ -9,6 +9,7 @@ import { CountUp } from "@/components/motion/CountUp";
 import { HeroWall } from "@/components/site/HeroWall";
 import { ClientStrip } from "@/components/site/ClientStrip";
 import { Portfolio } from "@/components/site/Portfolio";
+import { BeforeAfter } from "@/components/site/BeforeAfter";
 import { CtaBand } from "@/components/site/CtaBand";
 import { SERVICES, BOOKING_HREF } from "@/lib/site";
 
@@ -70,6 +71,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <BeforeAfter />
 
       {/* Services */}
       <section className="mu-section" id="services">

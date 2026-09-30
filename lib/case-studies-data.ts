@@ -4,7 +4,8 @@
  */
 export type CaseStudyStat = { value: string; label: string };
 export type CaseStudySnapshot = { label: string; value: string };
-export type CaseStudyImage = { src: string; alt: string };
+/** kind "diagram" marks an illustration (not a screenshot), so the page frames and captions it differently. */
+export type CaseStudyImage = { src: string; alt: string; kind?: "diagram"; caption?: string };
 
 export type CaseStudy = {
   slug: string;
@@ -127,6 +128,49 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
   },
   {
+    slug: "video-studio-website-and-booking",
+    tag: "Custom website & booking system",
+    title: "A video editing studio's website, built from scratch with booking built in",
+    metaTitle: "Video Editing Studio: Custom Website + Booking System | Case Study",
+    metaDescription:
+      "How I built a video editing studio's website from scratch, with a proper booking system that sends confirmation emails and generates meeting links automatically.",
+    hubExcerpt:
+      "A complete website for a video editing studio, built from scratch, with a booking system that confirms by email and creates the meeting link on its own.",
+    stats: [
+      { value: "From scratch", label: "custom design and build, not a template" },
+      { value: "Booking", label: "confirmation emails and meeting links sent automatically" },
+      { value: "Creators", label: "made for YouTube and Instagram creators and founder-led brands" },
+    ],
+    snapshot: [
+      { label: "Business type", value: "Video editing and packaging studio" },
+      { label: "Audience", value: "YouTube and Instagram creators, founder-led brands" },
+      { label: "Services used", value: "Web design, custom build, booking system" },
+    ],
+    problem: [
+      "This studio edits video for YouTube and Instagram creators and founder-led brands. Its work is all about looking sharp and holding attention, so the website had to do the same, and it needed a way for potential clients to book a call without the usual back and forth.",
+    ],
+    auditFindings: [
+      "A site that puts the editing work front and centre",
+      "Clear services for different kinds of creators, from long-form to short-form",
+      "A booking flow that doesn't depend on emailing back and forth",
+    ],
+    whatIDid: [
+      "Designed and built the whole website from scratch, with no template",
+      "Went for a dark, cinematic look with an amber accent, to suit the kind of content the studio makes",
+      "Built the main sections: a punchy hero, a scrolling ticker of services, service cards, and a work section split into long-form and short-form edits",
+      "Built a proper booking system: pick a time, get a confirmation email straight away, and the meeting link is generated automatically",
+    ],
+    results: [
+      "The studio has a site that fits the work it sells, and a booking flow that runs on its own without anyone stepping in.",
+      "New clients can book a call without emailing back and forth, and they get the confirmation and the meeting link straight away.",
+      "I'm not putting numbers on this one, because the point was a site and booking flow that look and work properly.",
+    ],
+    images: [
+      { src: "/proof/video-editing-agency-website.webp", alt: "The studio's website: a dark, cinematic hero with a bold headline, service cards, a work section with long-form and short-form edits, and a closing statement" },
+    ],
+    servicesUsed: [{ name: "Web design", href: "/services#web-design" }],
+  },
+  {
     slug: "us-plumbing-lead-automation",
     tag: "AI automation & n8n",
     title: "Automating a plumbing company's leads, bookings and follow-ups in n8n",
@@ -143,7 +187,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     snapshot: [
       { label: "Business type", value: "Local plumbing company" },
       { label: "Market", value: "United States, residential customers" },
-      { label: "Tools", value: "n8n, OpenAI, WhatsApp, Google Calendar, Gmail, Google Sheets" },
+      { label: "Tools", value: "n8n, OpenAI, WhatsApp, Google Calendar, Gmail, Google Sheets, Notion, Slack" },
     ],
     problem: [
       "This is a local plumbing company in the US that looks after homeowners in its service area. Most of its work starts with an enquiry on the website, and every one of those needed someone to read it, work out what the person wanted, reply, find a time and put it in the calendar.",
@@ -164,6 +208,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "If the slot is free, it books it and sends a confirmation. If not, it suggests other times over WhatsApp",
       "Every lead is added or updated in the CRM, which is a Google Sheet",
       "A reminder goes out 24 hours before the appointment, and after the job a follow-up asks for a review",
+      "A few extras run alongside: a thank-you email, a record in Notion, a Slack ping to the team, and a lead source report that updates its own sheet",
     ],
     results: [
       "It takes the repetitive part of handling enquiries off the team, so they can spend their time on the actual plumbing work.",
@@ -213,6 +258,14 @@ export const CASE_STUDIES: CaseStudy[] = [
     results: [
       "The malicious trigger was fully removed, not just its symptoms, and the rebuild was verified clean before handoff.",
       "The spam pages dropped out of Google's index over the following weeks, and the site's real pages returned to their earlier search visibility.",
+    ],
+    images: [
+      {
+        src: "/proof/malware-infection-diagram.svg",
+        alt: "Diagram: a hidden database trigger creates thousands of spam pages that Google indexes; the cause was traced, the trigger removed, the site rebuilt clean, and reindexing requested",
+        kind: "diagram",
+        caption: "How the infection worked and what I did about it. An illustration of the process, not real data.",
+      },
     ],
     servicesUsed: [
       { name: "Web design", href: "/services#web-design" },

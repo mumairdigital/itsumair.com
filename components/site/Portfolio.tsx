@@ -12,7 +12,7 @@ import { WORK, WORK_FILTERS } from "@/lib/work";
 
 export function Portfolio({ showAllLink = true }: { showAllLink?: boolean }) {
   const [f, setF] = React.useState("All");
-  const list = WORK.filter((p) => f === "All" || p.kind === f);
+  const list = WORK.filter((p) => f === "All" || p.kinds.includes(f as (typeof p.kinds)[number]));
   return (
     <section id="work" style={{ padding: "var(--section-y) 0" }}>
       <div className="mu-container" style={{ display: "flex", flexDirection: "column", gap: 40 }}>

@@ -85,11 +85,14 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       {c.images && (
         <section className="mu-section" aria-label="Proof screenshots">
           <div className="mu-container" style={{ display: "flex", flexDirection: "column", gap: 32 }}>
-            <span className="mu-eyebrow">The proof</span>
+            <span className="mu-eyebrow">{c.images.every((i) => i.kind === "diagram") ? "The process" : "The proof"}</span>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,420px),1fr))", gap: "var(--grid-gap)" }}>
               {c.images.map((img, i) => (
                 <Reveal key={img.src} delay={(i % 2) * 80}>
-                  <ProofFrame src={img.src} alt={img.alt} ratio="16/10" fit="cover" position="left top" />
+                  <figure style={{ margin: 0, display: "flex", flexDirection: "column", gap: 12 }}>
+                    <ProofFrame src={img.src} alt={img.alt} ratio="16/10" chrome={img.kind !== "diagram"} fit="cover" position="left top" />
+                    {img.caption && <figcaption style={{ fontSize: 14, color: "var(--text-muted)" }}>{img.caption}</figcaption>}
+                  </figure>
                 </Reveal>
               ))}
             </div>
