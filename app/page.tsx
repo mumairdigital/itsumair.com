@@ -72,8 +72,6 @@ export default function Home() {
         </div>
       </section>
 
-      <BeforeAfter />
-
       {/* Services */}
       <section className="mu-section" id="services">
         <div className="mu-container" style={{ display: "flex", flexDirection: "column", gap: 48 }}>
@@ -95,6 +93,8 @@ export default function Home() {
       </section>
 
       <Portfolio />
+
+      <BeforeAfter />
 
       {/* Process */}
       <section className="mu-section">
