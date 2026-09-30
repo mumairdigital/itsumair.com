@@ -127,6 +127,56 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
   },
   {
+    slug: "us-plumbing-lead-automation",
+    tag: "AI automation & n8n",
+    title: "Automating a plumbing company's leads, bookings and follow-ups in n8n",
+    metaTitle: "Plumbing Lead Automation with n8n | Case Study",
+    metaDescription:
+      "How I used n8n to automate lead capture, emergency detection, appointment booking, reminders and review requests for a local plumbing company in the US.",
+    hubExcerpt:
+      "A local plumbing company wanted new leads, emergency calls and bookings handled without someone chasing each one. I built the whole thing as one n8n workflow.",
+    stats: [
+      { value: "n8n", label: "one workflow connecting the whole process" },
+      { value: "Lead to review", label: "from the first enquiry to the post-service review request" },
+      { value: "Emergency path", label: "urgent requests get spotted and handled separately" },
+    ],
+    snapshot: [
+      { label: "Business type", value: "Local plumbing company" },
+      { label: "Market", value: "United States, residential customers" },
+      { label: "Tools", value: "n8n, OpenAI, WhatsApp, Google Calendar, Gmail, Google Sheets" },
+    ],
+    problem: [
+      "This is a local plumbing company in the US that looks after homeowners in its service area. Most of its work starts with an enquiry on the website, and every one of those needed someone to read it, work out what the person wanted, reply, find a time and put it in the calendar.",
+      "The tricky bit is emergencies. A burst pipe and a request for a quote in a couple of weeks look the same in an inbox, but they can't be treated the same way. On top of that, reminders and follow-ups are easy to forget when the team is out on jobs. They wanted a better way to handle all of it.",
+    ],
+    auditFindings: [
+      "New leads from the website needing a manual reply",
+      "Emergency requests mixed in with normal enquiries",
+      "Going back and forth over times, then adding the booking to the calendar by hand",
+      "Reminders, follow-ups and review requests depending on someone remembering",
+    ],
+    whatIDid: [
+      "Built it all as one n8n workflow, so lead capture, AI, messaging, the calendar and the sheet talk to each other",
+      "A new enquiry comes in from the website form or a Facebook lead, and the workflow picks it up as soon as it lands",
+      "AI reads the message and pulls out what the job is and how urgent it sounds",
+      "If it looks like an emergency, it goes down its own path: an urgent WhatsApp message, an urgent booking on the calendar and a confirmation email",
+      "For normal jobs, the customer gets a WhatsApp message first, then the workflow checks Google Calendar for a free slot",
+      "If the slot is free, it books it and sends a confirmation. If not, it suggests other times over WhatsApp",
+      "Every lead is added or updated in the CRM, which is a Google Sheet",
+      "A reminder goes out 24 hours before the appointment, and after the job a follow-up asks for a review",
+    ],
+    results: [
+      "It takes the repetitive part of handling enquiries off the team, so they can spend their time on the actual plumbing work.",
+      "Emergencies get spotted and treated differently from routine requests, instead of waiting in the same pile.",
+      "Booking is smoother for customers because they only see times that are really free, and the calendar and sheet update themselves.",
+      "Reminders and review requests happen without anyone having to remember. I'm not putting numbers on this one, because the point is fewer things slipping through the cracks.",
+    ],
+    images: [
+      { src: "/proof/n8n-workflow-automation.webp", alt: "The n8n workflow: lead capture, AI extraction, emergency check, urgent and normal booking flows, CRM, reminders and review request" },
+    ],
+    servicesUsed: [{ name: "AI solutions & automation", href: "/services#ai-automation" }],
+  },
+  {
     slug: "wordpress-malware-recovery",
     tag: "Technical recovery",
     title: "Tracing a hacked WordPress site's malware to a single database trigger, and rebuilding it clean",
