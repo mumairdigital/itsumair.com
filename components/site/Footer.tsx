@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { NAV_LINKS, SERVICES, CONTACT_EMAIL, BOOKING_HREF, WHATSAPP_HREF, WHATSAPP_DISPLAY } from "@/lib/site";
+import { NAV_LINKS, SERVICES, CONTACT_EMAIL, BOOKING_HREF, WHATSAPP_HREF, WHATSAPP_DISPLAY, SOCIAL_LINKS } from "@/lib/site";
 
 const col = { display: "flex", flexDirection: "column", gap: 10 } as const;
 const head = { fontFamily: "var(--font-mono)", fontSize: 12, letterSpacing: "var(--tracking-caps)", textTransform: "uppercase", color: "var(--text-muted)", marginBottom: 4 } as const;
@@ -32,6 +32,10 @@ export function Footer() {
             <a href={`mailto:${CONTACT_EMAIL}`} style={link}>{CONTACT_EMAIL}</a>
             <Link href={BOOKING_HREF} style={link}>Book a free call</Link>
             <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer" style={link}>WhatsApp: {WHATSAPP_DISPLAY}</a>
+          </div>
+          <div style={col}>
+            <span style={head}>Follow</span>
+            {SOCIAL_LINKS.map((s) => <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer me" style={link}>{s.label}</a>)}
           </div>
         </div>
         <div style={{ marginTop: 48, paddingTop: 20, borderTop: "1px solid var(--border-subtle)", display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "space-between", color: "var(--text-muted)", fontSize: 13 }}>

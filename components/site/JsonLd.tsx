@@ -1,4 +1,4 @@
-import { SITE_URL, SITE_NAME, CONTACT_EMAIL } from "@/lib/site";
+import { SITE_URL, SITE_NAME, CONTACT_EMAIL, SOCIAL_LINKS } from "@/lib/site";
 
 /** Site-wide structured data: the business and the website. Only facts that are already on the site. */
 export function JsonLd() {
@@ -11,6 +11,7 @@ export function JsonLd() {
         name: SITE_NAME,
         url: SITE_URL,
         email: CONTACT_EMAIL,
+        sameAs: SOCIAL_LINKS.map((s) => s.href),
         image: `${SITE_URL}/opengraph-image`,
         description: "Web design, SEO and local SEO, digital marketing, and AI automation for businesses.",
         serviceType: ["Web design", "SEO", "Local SEO", "Digital marketing", "AI automation"],

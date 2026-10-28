@@ -12,6 +12,15 @@ export const WHATSAPP_DISPLAY = "+92 320 9943057";
 export const WHATSAPP_MESSAGE = "Hi Umair, I have an urgent enquiry about my website / marketing.";
 export const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
+/** Same handle on every platform. */
+export const SOCIAL_LINKS = [
+  { label: "Facebook", href: "https://www.facebook.com/itsumairweb" },
+  { label: "Instagram", href: "https://www.instagram.com/itsumairweb" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/itsumairweb" },
+  { label: "X", href: "https://x.com/itsumairweb" },
+  { label: "YouTube", href: "https://www.youtube.com/@itsumairweb" },
+];
+
 export const NAV_LINKS = [
   { label: "Work", href: "/work" },
   { label: "Services", href: "/services" },
